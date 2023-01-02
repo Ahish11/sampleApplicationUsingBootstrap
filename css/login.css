@@ -1,0 +1,93 @@
+.popup-login {
+  width: 377px;
+  height: 220px;
+}
+.popup-login-outerbg {
+  margin: 125px 0 0 58px;
+}
+.logincontainer {
+  background: url(../images/fullbg.png) no-repeat;
+  background-position: 85% 48%;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+}
+.bgImg_outer img {
+  margin-right: 327px;
+  margin-top: 91px;
+}
+.LoginHeader {
+  margin-left: 59px;
+}
+.loginText {
+  position: relative;
+  font-size: 20px;
+  font-weight: 600;
+  color: #143e9d;
+}
+.pleaseLogin {
+  font-size: 14px;
+}
+.formOuter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 24px;
+}
+.formList {
+  display: flex;
+  flex-direction: column;
+}
+.fname,
+.LoginPassword,
+.lname {
+  color: #143e9d;
+  font-size: 14px;
+  /* font-weight: 600; */
+}
+.formOuter input {
+  margin-bottom: 19px;
+  width: 256px;
+  height: 32px;
+  border: 0;
+  border-bottom: 1px solid rgb(179, 165, 165);
+  outline: none;
+  background: #f4f9fc;
+  font-size: 12px;
+}
+.loginBtn {
+  width: 256px;
+  height: 35px;
+  font-size: 13px;
+  background: #143e9d;
+  text-align: center;
+  border: 0;
+  color: white;
+  box-shadow: 0px 0px 10px 2px #b8caff;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  margin-left: 59px;
+}
+.loginBottom {
+  text-align: center;
+  margin-top: 34px;
+}
+.forgotPassword {
+  text-decoration: none;
+  font-size: 12px;
+  color: black;
+  font-weight: 400;
+  margin-bottom: 24px;
+  margin-top: -10px;
+  margin-left: 121px;
+  border-bottom: 1px solid rgb(179, 165, 165);
+  width: 134px;
+}
+.register {
+  font-weight: 600;
+  color: #143e9d;
+}
+.dontHaveAccount {
+  font-size: 14px;
+}

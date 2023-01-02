@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>login</title>
+  <link rel="stylesheet" href="./bootstrapCss/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./sass/styleSass.scss">
+  <link rel="stylesheet" href="./css/login.css">
+</head>
+
+<body>
+  <div class="logincontainer">
+    <div class="popup-login-outerbg">
+      <div class="popup-login">
+        <div class="inner-popup-login">
+          <div class="LoginHeader">
+            <p class="loginText">WELCOME BACK</p>
+            <span class="pleaseLogin">Please login to your account</span>
+          </div>
+          <form class="formOuter">
+            <div class="form-firistName formList">
+              <label class="fname" for="fname">User name</label>
+              <input type="text" name="firstname" placeholder="Your name.." required>
+            </div>
+            <div class="formList">
+              <p class="LoginPassword">Password</p>
+              <input type="password" placeholder="Enter you password" required>
+              <a class="forgotPassword" href="#">Forgot your password ?</a>
+            </div>
+          </form>
+          <button type="button" class="loginBtn" type="submit">Login</button>
+          <div class="loginBottom">
+            <span class="dontHaveAccount">Dont have an account?
+              <a class="register" href="#">Register</a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bgImg_outer">
+      <img src="./images/bgLock.png" alt="img">
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,2599 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Identitiy Management</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="./bootstrapCss/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./sass/styleSass.scss">
+  <link rel="stylesheet" href="./css/identitityManagement.css">
+</head>
+
+<body onload="myFunction()">
+  <div class="commonOuterBg"></div>
+  <div class="container-fluid p-0">
+    <div class="outer overflow-hidden position-relative p-3">
+      <div class="container_identityManagement overflow_hidden">
+        <div class="container-fluid p-0">
+          <!-- change -->
+          <div class="row">
+            <header class="header fixed-top d-flex align-items-center ">
+              <div class="col-xl-6 col-md-8 col-lg-5 col-7 col-xxl-7">
+                <div class="left_header">
+                  <img id="menu_dashboard" class="menu_header img-fluid" src="./images/Menu.svg" alt="Menu"
+                    data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                  <a href="./index.html">
+                    <img class="img-fluid ms-2" src="./images/logo frame.svg" alt="logo">
+                  </a>
+                </div>
+              </div>
+              <div class="col-xl-6 col-md-4 col-lg-7 col-5 col-xxl-5">
+                <div class="right_header d-flex align-items-center  ms-4 justify-content-evenly">
+                  <div class="searchDiv position-relative d-none d-lg-block">
+                    <input class="search border-0" placeholder="Search..">
+                    <img class="searchIcon position-absolute" src="./images/icon-search.svg">
+                    </input>
+                  </div>
+                  <div class="notification d-none d-md-block">
+                    <img src="./images/notificion icon.svg" alt="img">
+                  </div>
+                  <div class="adminContent d-flex">
+                    <div class="d-flex flex-column  me-4">
+                      <p class="joanne_logan">Joanne Logan</p>
+                      <p class="adminstratorText">Adminstrator</p>
+                    </div>
+                    <div>
+                      <img class="userImg" src="./images/userProfile.svg" alt="userImg">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </header>
+          </div>
+        </div>
+        <!-- change -->
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
+          aria-labelledby="offcanvasExampleLabel">
+          <div class="offcanvas-body">
+            <div class="main_menu">
+              <div class="menu_items">
+                <img src="./images/dashboard_menu.svg" alt="explore_menu">
+                <p class="dashBoard">
+                  <a href="./index.html">DashBoard</a>
+                </p>
+              </div>
+              <div class="sub_menu_items_explore">
+                <div class="menu_items explore_menu explore_menu_active">
+                  <img src="./images/explore_menu.svg" alt="explore_menu">
+                  <p class="explore">Explore</p>
+                  <img class="arrow" src="./images/Arrow.svg" alt="arrow">
+                </div>
+                <ul class="exploreSubmenu">
+                  <li class="ExploreActive">
+                    <a class="identityManagement_active" href="./identitityManagement.html">Identity
+                      Management</a>
+                  </li>
+                  <li class=""><a href="https://www.google.com/">Rules Management</a></li>
+                  <li><a href="./trust_level.html">Trust Level</a></li>
+                  <li><a href="https://www.google.com/">Resource Management</a></li>
+                  <li><a href="https://www.google.com/">Resource List Management</a></li>
+                </ul>
+              </div>
+              <div class="menu_items">
+                <img src="./images/management_menu.svg" alt="explore_menu">
+                <p class="management_network">Management Network</p>
+              </div>
+              <div class="menu_items">
+                <img src="./images/gatewayServices_menu.svg" alt="explore_menu">
+                <p class="gateway_services">Gateway Services</p>
+              </div>
+              <div class="menu_items">
+                <img src="./images/endpoint_menu.svg" alt="explore_menu">
+                <p class="endpoint">Endpoint</p>
+                <img class="arrow" id="endpointArrow" src="./images/Arrow.svg" alt="arrow">
+              </div>
+              <div class="menu_items">
+                <img src="./images/maintenance_menu.svg" alt="explore_menu">
+                <p class="maintenance"> Maintenance</p>
+              </div>
+              <div class="menu_items">
+                <img src="./images/monitoring_menu.svg" alt="explore_menu">
+                <p class="monitoring">Monitoring</p>
+              </div>
+              <div class="menu_items">
+                <img class="d-block d-md-none" src="./images/mobile_notifi.svg" alt="explore_menu">
+                <p class="monitoring d-block d-md-none">Notifications</p>
+              </div>
+              <div class="menu_items ms-2 position-relative d-block d-md-none">
+                <input class="mobile_search" placeholder="Search..">
+                <img class="mobile_search_icon position-absolute" src="./images/mg_searchicon.svg">
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- change -->
+        <nav class="verticalMenu d-flex justify-content-center align-items-end flex-column h-100">
+          <div class="verticalMenu_icon statisticsFloating_pg">
+            <img src="./images/Statisics Icon.svg" alt="icon">
+          </div>
+          <div class="verticalMenu_icon identities_rules_floating_pg">
+            <img src="./images/Identities Icon.svg" alt="icon">
+          </div>
+          <div class="verticalMenu_icon trustlevel_floating_pg">
+            <img src="./images/TrustLvl Icon.svg" alt="icon">
+          </div>
+          <div class="verticalMenu_icon dashboard_floating_pg">
+            <img src="./images/Floating Dashboard Icon.svg" alt="icon">
+          </div>
+        </nav>
+        <div class="trustlevel_spacing">
+          <div class="popup_addIdentity_outerbg">
+          </div>
+          <div class="row">
+            <!-- add popup -->
+            <div class="popup_inner_addIdentity col-sm-11 col-11 col-lg-6">
+              <div class="popup_addIdentity_header">
+                <p class="addIdentity_text">Add Identity</p>
+                <img class="close_addId_img position-absolute top-0 end-0" src="./images/close_icon.svg"
+                  alt="close_icon">
+              </div>
+              <form>
+                <div class="row">
+                  <div class="table_formOuter d-flex flex-wrap justify-content-between align-items-center ">
+                    <div class="col-sm-6 col-12 pe-sm-3 pe-0">
+                      <div class="outer_input sub_outer_input1">
+                        <label class="fname" for="fname">Name</label>
+                        <input class="row1_input  input_form form-control" type="text" placeholder="" required>
+                        <p class="errorMsg">Name should not be null</p>
+                      </div>
+                    </div>
+                    <div class="col-sm-6 col-12 ">
+                      <div class="outer_input sub_outer_input2">
+                        <label class="fname" for="fname">Group</label>
+                        <input class="row2_input input_form form-control" type="text" name="firstname" placeholder="">
+                        <p class="errorMsg">Group should not be null</p>
+                      </div>
+                    </div>
+                    <div class="col-sm-6 col-12  pe-sm-3 pe-0">
+                      <div class="outer_input sub_outer_input3">
+                        <label class="lname" for="lname">Trust Level</label>
+                        <select class="form-select input_form" id="validationServer04"
+                          aria-describedby="validationServer04Feedback" required>
+                          <option selected disabled value="">Choose...</option>
+                          <option>0</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>5</option>
+                          <option>6</option>
+                          <option>7</option>
+                          <option>8</option>
+                        </select>
+                      </div>
+                    </div>
+                    <p class="errorMsg">Trust Level should not be null</p>
+                    <div class="col-sm-6 col-12 ">
+                      <div class="outer_input sub_outer_input4">
+                        <label class="lname" for="lname">IP Address</label>
+                        <input class="row4_input input_form form-control" type="text" name="lastname" placeholder="">
+                        <p class="errorMsg">IP should not be null</p>
+                      </div>
+                    </div>
+                    <div class="col-sm-6 col-12  pe-sm-3 pe-0">
+                      <div class="outer_input sub_outer_input5">
+                        <label class="lname" for="lname">Mac</label>
+                        <input class="row5_input input_form form-control" type="text" name="lastname" placeholder="">
+                      </div>
+                      <p class="errorMsg">Group should not be null</p>
+                    </div>
+                    <div class="col-sm-6 col-12">
+                      <div class="outer_input sub_outer_input6">
+                        <label class="lname comment_text" for="lname">Comment</label>
+                        <textarea class="row6_input input_form input_form ">
+                                                  Lorem ipsum dolor sit amet consectetur adipisicin quos eum iusto. Perspiciatis, repudiandae!
+                                                       </textarea>
+                      </div>
+                    </div>
+                    <div class="col-sm-6 col-12 pe-sm-3 pe-0">
+                      <div class="outer_input sub_outer_input7">
+                        <label class="lname" for="lname">TCP Tagging</label>
+                        <select class="form-select input_form" id="validationServer04"
+                          aria-describedby="validationServer04Feedback" required>
+                          <option selected disabled value="">Choose...</option>
+                          <option>SEQ</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-sm-6 col-12 pe-0">
+                      <div class="outer_input sub_outer_input8">
+                        <label class="lname" for="lname">Remote Key</label>
+                        <select class="form-select input_form" id="validationServer04"
+                          aria-describedby="validationServer04Feedback" required>
+                          <option selected disabled value="">Choose...</option>
+                          <option>True</option>
+                          <option>False</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-sm-6 pe-sm-3 pe-0 col-12 ">
+                      <div class="outer_input sub_outer_input9">
+                        <label for="validationServer04" class="form-label">Enabled</label>
+                        <select class="form-select  input_form" id="validationServer04"
+                          aria-describedby="validationServer04Feedback" required>
+                          <option selected disabled value="">Choose...</option>
+                          <option>Enabled</option>
+                          <option>Disabled</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+              <div class="popup_addIdentity_btn">
+                <button class="cancel_btn">Cancel</button>
+                <button class="apply_btn">Apply</button>
+              </div>
+            </div>
+          </div>
+          <!-- editpopup -->
+          <div class="row">
+            <div class="popup_inner_EditIdentity col-sm-11 col-11 col-lg-6">
+              <div class="popup_addIdentity_header">
+                <p class="addIdentity_text">Edit Identity</p>
+                <img class="close_addId_img position-absolute top-0 end-0" src="./images/close_icon.svg"
+                  alt="close_icon">
+              </div>
+              <form>
+                <div class="row">
+                  <div class="table_formOuter d-flex flex-wrap justify-content-between align-items-center ">
+                    <div class="col-sm-6 col-12 pe-sm-3 pe-0">
+                      <div class="outer_input sub_outer_input1">
+                        <label class="fname" for="fname">Name</label>
+                        <input class="row1_input  input_form form-control" type="text" placeholder="" required>
+                        <p class="errorMsg">Name should not be null</p>
+                      </div>
+                    </div>
+                    <div class="col-sm-6 col-12 ">
+                      <div class="outer_input sub_outer_input2">
+                        <label class="fname" for="fname">Group</label>
+                        <input class="row2_input input_form form-control" type="text" name="firstname" placeholder="">
+                        <p class="errorMsg">Group should not be null</p>
+                      </div>
+                    </div>
+                    <div class="col-sm-6 col-12  pe-sm-3 pe-0">
+                      <div class="outer_input sub_outer_input3">
+                        <label class="lname" for="lname">Trust Level</label>
+                        <select class="form-select input_form" id="validationServer04"
+                          aria-describedby="validationServer04Feedback" required>
+                          <option selected disabled value="">Choose...</option>
+                          <option>0</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>5</option>
+                          <option>6</option>
+                          <option>7</option>
+                          <option>8</option>
+                        </select>
+                      </div>
+                    </div>
+                    <p class="errorMsg">Trust Level should not be null</p>
+                    <div class="col-sm-6 col-12 ">
+                      <div class="outer_input sub_outer_input4">
+                        <label class="lname" for="lname">IP Address</label>
+                        <input class="row4_input input_form form-control" type="text" name="lastname" placeholder="">
+                        <p class="errorMsg">IP should not be null</p>
+                      </div>
+                    </div>
+                    <div class="col-sm-6 col-12  pe-sm-3 pe-0">
+                      <div class="outer_input sub_outer_input5">
+                        <label class="lname" for="lname">Mac</label>
+                        <input class="row5_input input_form form-control" type="text" name="lastname" placeholder="">
+                      </div>
+                      <p class="errorMsg">Group should not be null</p>
+                    </div>
+                    <div class="col-sm-6 col-12">
+                      <div class="outer_input sub_outer_input6">
+                        <label class="lname comment_text" for="lname">Comment</label>
+                        <textarea class="row6_input input_form input_form ">
+                                                  Lorem ipsum dolor sit amet consectetur adipisicin quos eum iusto. Perspiciatis, repudiandae!
+                                                </textarea>
+                      </div>
+                    </div>
+                    <div class="col-sm-6 col-12 pe-sm-3 pe-0">
+                      <div class="outer_input sub_outer_input7">
+                        <label class="lname" for="lname">TCP Tagging</label>
+                        <select class="form-select input_form" id="validationServer04"
+                          aria-describedby="validationServer04Feedback" required>
+                          <option selected disabled value="">Choose...</option>
+                          <option>SEQ</option>
+                          <option>2</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-sm-6 col-12">
+                      <div class="outer_input sub_outer_input8">
+                        <label class="lname" for="lname">Remote Key</label>
+                        <select class="form-select input_form" id="validationServer04"
+                          aria-describedby="validationServer04Feedback" required>
+                          <option selected disabled value="">Choose...</option>
+                          <option>True</option>
+                          <option>False</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-sm-6 pe-sm-3 pe-0 col-12 ">
+                      <div class="outer_input sub_outer_input9">
+                        <label for="validationServer04" class="form-label">Enabled</label>
+                        <select class="form-select  input_form" id="validationServer04"
+                          aria-describedby="validationServer04Feedback" required>
+                          <option selected disabled value="">Choose...</option>
+                          <option>Enabled</option>
+                          <option>Disabled</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+              <div class="popup_addIdentity_btn">
+                <button class="cancel_btn close_edit">Cancel</button>
+                <button class="apply_btn">Save</button>
+              </div>
+            </div>
+          </div>
+          <div class="row gx-0">
+            <div class="breadcrumb_table_outer d-flex align-items-center justify-content-between">
+              <div class="col-6">
+                <p class="breadcrumb_table_outer_text">Identity Management</p>
+              </div>
+              <div class="col-6">
+                <div class="breadcrumb_table d-flex justify-content-end">
+                  <span>Explore ></span>
+                  <span>Identity Management</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- filterSec -->
+          <div class="row gx-0">
+            <section class="filter_sec d-flex align-items-center flex-wrap">
+              <div class="col-6 col-sm-4">
+                <div class="filter d-flex align-items-center">
+                  <img class="filter_img" src="./images/Filter.svg" alt="Filter">
+                  <p class="filter_text">Filter</p>
+                </div>
+              </div>
+              <div class="col-6 col-sm-4">
+                <div class="search_tl d-flex align-items-center position-relative">
+                  <img class="im_search_pic" src="./images/Search_trustLevel.svg" alt="Search_trustLevel">
+                  <input class="im_search_input " type="text" placeholder="Search">
+                </div>
+              </div>
+              <div class="col-12 col-sm-4">
+                <div class="trustlevel_btn  d-flex justify-content-end">
+                  <button type="button" class="remove_btn_tl">Remove
+                    <img class="mg_remove_pic" src="./images/mg_remove.svg" alt="mg_remove">
+                  </button>
+                  <button type="button" class="add_btn_tl">Add
+                    <img class="mg_add_pic" src="./images/mg_add.svg" alt="mg_remove">
+                  </button>
+                </div>
+              </div>
+            </section>
+          </div>
+          <!-- pc table -->
+          <section class="tabel_outer d-none d-lg-block">
+            <div class="row gx-0">
+              <div class="table_heading d-flex align-items-center justify-content-center">
+                <div class="col-xl-1 col-lg-1">
+                  <div class="action_nd_checkbox d-flex align-items-center justify-content-start">
+                    <div class="table_input table_items">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    </div>
+                    <div class="table_action table_items ">
+                      <p>Action</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-1 col-lg-1">
+                  <div class="table_name table_items">
+                    <p>Name</p>
+                  </div>
+                </div>
+                <div class="col-xl-2 col-lg-1">
+                  <div class="table_trustlevel table_items">
+                    <p>Trust Level</p>
+                  </div>
+                </div>
+                <div class="col-xl-1 col-lg-1">
+                  <div class="table_group table_items">
+                    <p>Group</p>
+                  </div>
+                </div>
+                <div class="col-xl-1 col-lg-2">
+                  <div class="table_enabled table_items">
+                    <p>Enabled</p>
+                  </div>
+                </div>
+                <div class="col-xl-2 col-lg-2">
+                  <div class="table_ipaddress table_items">
+                    <p>IP Address/Prefix MAC</p>
+                  </div>
+                </div>
+                <div class="col-xl-2 col-lg-2">
+                  <div class="table_comment table_items">
+                    <p>Comment</p>
+                  </div>
+                </div>
+                <div class="col-xl-1 col-lg-1">
+                  <div class="table_tcpTagging table_items">
+                    <p>Tcp Tagging</p>
+                  </div>
+                </div>
+                <div class="col-xl-1 col-lg-1">
+                  <div class="table_remotekey table_items">
+                    <p>Remote Key</p>
+                  </div>
+                </div>
+              </div>
+              <div class="table_row">
+                <div class="col-xl-1 col-lg-1">
+                  <div class="action_nd_checkbox d-flex align-items-center justify-content-start">
+                    <div class="table_input table_items">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    </div>
+                    <div class="table_action table_items">
+                      <img class="table_3dot_menu" src="./images/table_3dot_menu.svg" alt="menu">
+                      <div class="edit_delete">
+                        <div class="edit_outer">
+                          <img src="./images/edit_icon.svg" alt="ed">
+                          <p class="edit_txt">Edit</p>
+                        </div>
+                        <div class="delete_outer">
+                          <img src="./images/delete_icon.svg" alt="ed">
+                          <p class="delete_txt">Delete</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-1 col-lg-1">
+                  <div class="table_name table_items">
+                    <p>AlphaTrust1</p>
+                  </div>
+                </div>
+                <div class="col-xl-2 col-lg-1">
+                  <div class="table_trustlevel table_items">
+                    <p class="trust_level trust_level1"><span class="trustLvl_no">5</span></p>
+                  </div>
+                </div>
+                <div class="col-xl-1 col-lg-1">
+                  <div class="table_group table_items">
+                    <p>Identites</p>
+                  </div>
+                </div>
+                <div class="col-xl-1 col-lg-2">
+                  <div class="table_enabled table_items">
+                    <img src="./images/enabled.svg" alt="enabled">
+                  </div>
+                </div>
+                <div class="col-xl-2 col-lg-2">
+                  <div class="table_ipaddress table_items">
+                    <p>100.0.20/32</p>
+                  </div>
+                </div>
+                <div class="col-xl-2 col-lg-2">
+                  <div class="table_comment table_items">
+                    <p> veniam libero minima molestiae.</p>
+                  </div>
+                </div>
+                <div class="col-xl-1 col-lg-1">
+                  <div class="table_tcpTagging table_items">
+                    <p>SEQ</p>
+                  </div>
+                </div>
+                <div class="col-xl-1 col-lg-1">
+                  <div class="table_remotekey table_items">
+                    <p class="false_red">False</p>
+                  </div>
+                </div>
+              </div>
+              <div class="table_row">
+                <div class="col-xl-1 col-lg-1">
+                  <div class="action_nd_checkbox d-flex align-items-center justify-content-start">
+                    <div class="table_input table_items">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    </div>
+                    <div class="table_action table_items">
+                      <img class="table_3dot_menu" src="./images/table_3dot_menu.svg" alt="menu">
+                      <div class="edit_delete">
+                        <div class="edit_outer">
+                          <img src="./images/edit_icon.svg" alt="ed">
+                          <p class="edit_txt">Edit</p>
+                        </div>
+                        <div class="delete_outer">
+                          <img src="./images/delete_icon.svg" alt="ed">
+                          <p class="delete_txt">Delete</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-1 col-lg-1">
+                  <div class="table_name table_items">
+                    <p>AlphaTrust2</p>
+                  </div>
+                </div>
+                <div class="col-xl-2 col-lg-1">
+                  <div class="table_trustlevel table_items">
+                    <p class="trust_level trust_level2"><span class="trustLvl_no">4</span></p>
+                  </div>
+                </div>
+                <div class="col-xl-1 col-lg-1">
+                  <div class="table_group table_items">
+                    <p>Rules</p>
+                  </div>
+                </div>
+                <div class="col-xl-1 col-lg-2">
+                  <div class="table_enabled table_items">
+                    <img src="./images/enabled.svg" alt="enabled">
+                  </div>
+                </div>
+                <div class="col-xl-2 col-lg-2">
+                  <div class="table_ipaddress table_items">
+                    <p>100.0.20/32</p>
+                  </div>
+                </div>
+                <div class="col-xl-2 col-lg-2">
+                  <div class="table_comment table_items">
+                    <p>Loremcing elit. Quas voluptates dolorum dolores
+                      perspiciatis dels</p>
+                  </div>
+                </div>
+                <div class="col-xl-1 col-lg-1">
+                  <div class="table_tcpTagging table_items">
+                    <p>SEQ</p>
+                  </div>
+                </div>
+                <div class="col-xl-1 col-lg-1">
+                  <div class="table_remotekey table_items">
+                    <p class="true_green">True</p>
+                  </div>
+                </div>
+              </div>
+              <div class="table_row">
+                <div class="col-xl-1 col-lg-1">
+                  <div class="action_nd_checkbox d-flex align-items-center justify-content-start">
+                    <div class="table_input table_items">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    </div>
+                    <div class="table_action table_items">
+                      <img class="table_3dot_menu" src="./images/table_3dot_menu.svg" alt="menu">
+                      <div class="edit_delete">
+                        <div class="edit_outer">
+                          <img src="./images/edit_icon.svg" alt="ed">
+                          <p class="edit_txt">Edit</p>
+                        </div>
+                        <div class="delete_outer">
+                          <img src="./images/delete_icon.svg" alt="ed">
+                          <p class="delete_txt">Delete</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-1 col-lg-1">
+                  <div class="table_name table_items">
+                    <p>AlphaTrust4</p>
+                  </div>
+                </div>
+                <div class="col-xl-2 col-lg-1">
+                  <div class="table_trustlevel table_items">
+                    <p class="trust_level trust_level2"><span class="trustLvl_no">5</span></p>
+                  </div>
+                </div>
+                <div class="col-xl-1 col-lg-1">
+                  <div class="table_group table_items">
+                    <p>EndPoint</p>
+                  </div>
+                </div>
+                <div class="col-xl-1 col-lg-2">
+                  <div class="table_enabled table_items">
+                    <img src="./images/enabled.svg" alt="enabled">
+                  </div>
+                </div>
+                <div class="col-xl-2 col-lg-2">
+                  <div class="table_ipaddress table_items">
+                    <p>100.0.20/32</p>
+                  </div>
+                </div>
+                <div class="col-xl-2 col-lg-2">
+                  <div class="table_comment table_items">
+                    <p>ipsum dto ex dicta quas, fugit minus voluptas
+                      inventore.
+                      Est,
+                      nostrum.</p>
+                  </div>
+                </div>
+                <div class="col-xl-1 col-lg-1">
+                  <div class="table_tcpTagging table_items">
+                    <p>SEQ</p>
+                  </div>
+                </div>
+                <div class="col-xl-1 col-lg-1">
+                  <div class="table_remotekey table_items">
+                    <p class="false_red">False</p>
+                  </div>
+                </div>
+              </div>
+              <div class="table_row">
+                <div class="col-xl-1 col-lg-1">
+                  <div class="action_nd_checkbox d-flex align-items-center justify-content-start">
+                    <div class="table_input table_items">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    </div>
+                    <div class="table_action table_items">
+                      <img class="table_3dot_menu" src="./images/table_3dot_menu.svg" alt="menu">
+                      <div class="edit_delete">
+                        <div class="edit_outer">
+                          <img src="./images/edit_icon.svg" alt="ed">
+                          <p class="edit_txt">Edit</p>
+                        </div>
+                        <div class="delete_outer">
+                          <img src="./images/delete_icon.svg" alt="ed">
+                          <p class="delete_txt">Delete</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-1 col-lg-1">
+                  <div class="table_name table_items">
+                    <p>AlphaTrust7</p>
+                  </div>
+                </div>
+                <div class="col-xl-2 col-lg-1">
+                  <div class="table_trustlevel table_items">
+                    <p class="trust_level trust_level4"><span class="trustLvl_no">6</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="col-xl-1 col-lg-1">
+                  <div class="table_group table_items">
+                    <p>Resources</p>
+                  </div>
+                </div>
+                <div class="col-xl-1 col-lg-2">
+                  <div class="table_enabled table_items">
+                    <img src="./images/enabled.svg" alt="enabled">
+                  </div>
+                </div>
+                <div class="col-xl-2 col-lg-2">
+                  <div class="table_ipaddress table_items">
+                    <p>100.0.20/32</p>
+                  </div>
+                </div>
+                <div class="col-xl-2 col-lg-2">
+                  <div class="table_comment table_items">
+                    <p>Lorem veniam tempore. Accusamus placeat eum expedita ut
+                      quaerat adipisci eos.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-xl-1 col-lg-1">
+                  <div class="table_tcpTagging table_items">
+                    <p>SEQ</p>
+                  </div>
+                </div>
+                <div class="col-xl-1 col-lg-1">
+                  <div class="table_remotekey table_items">
+                    <p class="false_red">False</p>
+                  </div>
+                </div>
+              </div>
+              <div class="table_row">
+                <div class="col-xl-1 col-lg-1">
+                  <div class="action_nd_checkbox d-flex align-items-center justify-content-start">
+                    <div class="table_input table_items">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    </div>
+                    <div class="table_action table_items">
+                      <img class="table_3dot_menu" src="./images/table_3dot_menu.svg" alt="menu">
+                      <div class="edit_delete">
+                        <div class="edit_outer">
+                          <img src="./images/edit_icon.svg" alt="ed">
+                          <p class="edit_txt">Edit</p>
+                        </div>
+                        <div class="delete_outer">
+                          <img src="./images/delete_icon.svg" alt="ed">
+                          <p class="delete_txt">Delete</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-1 col-lg-1">
+                  <div class="table_name table_items">
+                    <p>AlphaTrust3</p>
+                  </div>
+                </div>
+                <div class="col-xl-2 col-lg-1">
+                  <div class="table_trustlevel table_items">
+                    <p class="trust_level trust_level5"><span class="trustLvl_no">7</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="col-xl-1 col-lg-1">
+                  <div class="table_group table_items">
+                    <p>Identites</p>
+                  </div>
+                </div>
+                <div class="col-xl-1 col-lg-2">
+                  <div class="table_enabled table_items">
+                    <img src="./images/enabled.svg" alt="enabled">
+                  </div>
+                </div>
+                <div class="col-xl-2 col-lg-2">
+                  <div class="table_ipaddress table_items">
+                    <p>100.0.20/32</p>
+                  </div>
+                </div>
+                <div class="col-xl-2 col-lg-2">
+                  <div class="table_comment table_items">
+                    <p>Dolor sit amet</p>
+                  </div>
+                </div>
+                <div class="col-xl-1 col-lg-1">
+                  <div class="table_tcpTagging table_items">
+                    <p>SEQ</p>
+                  </div>
+                </div>
+                <div class="col-xl-1 col-lg-1">
+                  <div class="table_remotekey table_items">
+                    <p class="true_green">True</p>
+                  </div>
+                </div>
+              </div>
+              <div class="table_row">
+                <div class="col-xl-1 col-lg-1">
+                  <div class="action_nd_checkbox d-flex align-items-center justify-content-start">
+                    <div class="table_input table_items">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    </div>
+                    <div class="table_action table_items">
+                      <img class="table_3dot_menu" src="./images/table_3dot_menu.svg" alt="menu">
+                      <div class="edit_delete">
+                        <div class="edit_outer">
+                          <img src="./images/edit_icon.svg" alt="ed">
+                          <p class="edit_txt">Edit</p>
+                        </div>
+                        <div class="delete_outer">
+                          <img src="./images/delete_icon.svg" alt="ed">
+                          <p class="delete_txt">Delete</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-1 col-lg-1">
+                  <div class="table_name table_items">
+                    <p>AlphaTrust4</p>
+                  </div>
+                </div>
+                <div class="col-xl-2 col-lg-1">
+                  <div class="table_trustlevel table_items">
+                    <p class="trust_level trust_level6"><span class="trustLvl_no">4</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="col-xl-1 col-lg-1">
+                  <div class="table_group table_items">
+                    <p>Rules</p>
+                  </div>
+                </div>
+                <div class="col-xl-1 col-lg-2">
+                  <div class="table_enabled table_items">
+                    <img src="./images/enabled.svg" alt="enabled">
+                  </div>
+                </div>
+                <div class="col-xl-2 col-lg-2">
+                  <div class="table_ipaddress table_items">
+                    <p>100.0.20/32</p>
+                  </div>
+                </div>
+                <div class="col-xl-2 col-lg-2">
+                  <div class="table_comment table_items">
+                    <p>Dolor sit amet</p>
+                  </div>
+                </div>
+                <div class="col-xl-1 col-lg-1">
+                  <div class="table_tcpTagging table_items">
+                    <p>SEQ</p>
+                  </div>
+                </div>
+                <div class="col-xl-1 col-lg-1">
+                  <div class="table_remotekey table_items">
+                    <p class="false_red">False</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- mobile_table -->
+          <div class="row gx-0 justify-content-md-center d-lg-none">
+            <div class="col-12 col-md-11 ">
+              <div class="mobile_table_outer p-4 mt-3">
+                <div class="row gx-0">
+                  <div class="mobile_table_inner d-flex align-items-center">
+                    <div class="col-7">
+                      <p class="left_mobile_table_items">Select</p>
+                    </div>
+                    <div class="col-5">
+                      <div class="mobile_table_input right_mobile_table_items">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mobile_table_inner d-flex align-items-center">
+                    <div class="col-7">
+                      <div class="mobile_table_action left_mobile_table_items">
+                        <p>Action</p>
+                      </div>
+                    </div>
+                    <div class="col-5">
+                      <div class="table_action table_items ms-0">
+                        <img class="table_3dot_menu" src="./images/table_3dot_menu.svg" alt="menu">
+                        <div class="edit_delete">
+                          <div class="edit_outer">
+                            <img src="./images/edit_icon.svg" alt="ed">
+                            <p class="edit_txt">Edit</p>
+                          </div>
+                          <div class="delete_outer">
+                            <img src="./images/delete_icon.svg" alt="ed">
+                            <p class="delete_txt">Delete</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mobile_table_inner d-flex align-items-center">
+                    <div class="col-7">
+                      <div class="mobile_table_name left_mobile_table_items">
+                        <p>Name</p>
+                      </div>
+                    </div>
+                    <div class="col-5">
+                      <div class="table_name right_mobile_table_items">
+                        <p>AlphaTrust1</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mobile_table_inner d-flex align-items-center">
+                    <div class="col-7">
+                      <div class="mobile_table_trustlevel left_mobile_table_items">
+                        <p>Trust Level</p>
+                      </div>
+                    </div>
+                    <div class="col-5">
+                      <div class="mobile_table_trustlevel right_mobile_table_items">
+                        <p class="trust_level trust_level1"><span class="trustLvl_no">5</span>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mobile_table_inner d-flex align-items-center">
+                    <div class="col-7">
+                      <div class="mobile_table_group left_mobile_table_items">
+                        <p>Group</p>
+                      </div>
+                    </div>
+                    <div class="col-5">
+                      <div class="table_group right_mobile_table_items">
+                        <p>Identites</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mobile_table_inner d-flex align-items-center">
+                    <div class="col-7">
+                      <div class="mobile_table_enabled left_mobile_table_items">
+                        <p>Enabled</p>
+                      </div>
+                    </div>
+                    <div class="col-5">
+                      <div class="table_enabled_pic right_mobile_table_items">
+                        <img src="./images/enabled.svg" alt="enabled">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mobile_table_inner d-flex align-items-center">
+                    <div class="col-7">
+                      <div class="mobile_table_ipaddress left_mobile_table_items">
+                        <p>IP Address/Prefix MAC</p>
+                      </div>
+                    </div>
+                    <div class="col-5">
+                      <div class="table_ipaddress right_mobile_table_items">
+                        <p>100.0.20/32</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mobile_table_inner d-flex align-items-center">
+                    <div class="col-7">
+                      <div class="mobile_table_comment left_mobile_table_items">
+                        <p>Comment</p>
+                      </div>
+                    </div>
+                    <div class="col-5">
+                      <div class="mobile_table_comment right_mobile_table_items">
+                        <p> veniam libero minima molestiae.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mobile_table_inner d-flex align-items-center">
+                    <div class="col-7">
+                      <div class="mobile_table_tcpTagging left_mobile_table_items">
+                        <p>Tcp Tagging</p>
+                      </div>
+                    </div>
+                    <div class="col-5">
+                      <div class="table_tcpTagging right_mobile_table_items">
+                        <p>SEQ</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mobile_table_inner d-flex align-items-center">
+                    <div class="col-7">
+                      <div class="mobile_table_remotekey left_mobile_table_items">
+                        <p>Remote Key</p>
+                      </div>
+                    </div>
+                    <div class="col-5">
+                      <div class="table_remotekey right_mobile_table_items">
+                        <p class="false_red">False</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-11 ">
+              <div class="mobile_table_outer p-4 mt-3">
+                <div class="row gx-0">
+                  <div class="mobile_table_inner d-flex align-items-center">
+                    <div class="col-7">
+                      <p class="left_mobile_table_items">Select</p>
+                    </div>
+                    <div class="col-5">
+                      <div class="mobile_table_input right_mobile_table_items">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mobile_table_inner d-flex align-items-center">
+                    <div class="col-7">
+                      <div class="mobile_table_action left_mobile_table_items">
+                        <p>Action</p>
+                      </div>
+                    </div>
+                    <div class="col-5">
+                      <div class="table_action table_items ms-0">
+                        <img class="table_3dot_menu" src="./images/table_3dot_menu.svg" alt="menu">
+                        <div class="edit_delete">
+                          <div class="edit_outer">
+                            <img src="./images/edit_icon.svg" alt="ed">
+                            <p class="edit_txt">Edit</p>
+                          </div>
+                          <div class="delete_outer">
+                            <img src="./images/delete_icon.svg" alt="ed">
+                            <p class="delete_txt">Delete</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="edit_delete">
+                      <div class="edit_outer">
+                        <img src="./images/edit_icon.svg" alt="ed">
+                        <p class="edit_txt">Edit</p>
+                      </div>
+                      <div class="delete_outer">
+                        <img src="./images/delete_icon.svg" alt="ed">
+                        <p class="delete_txt">Delete</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mobile_table_inner d-flex align-items-center">
+                    <div class="col-7">
+                      <div class="mobile_table_name left_mobile_table_items">
+                        <p>Name</p>
+                      </div>
+                    </div>
+                    <div class="col-5">
+                      <div class="table_name right_mobile_table_items">
+                        <p>AlphaTrust2</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mobile_table_inner d-flex align-items-center">
+                    <div class="col-7">
+                      <div class="mobile_table_trustlevel left_mobile_table_items">
+                        <p>Trust Level</p>
+                      </div>
+                    </div>
+                    <div class="col-5">
+                      <div class="mobile_table_trustlevel right_mobile_table_items">
+                        <p class="trust_level trust_level2"><span class="trustLvl_no">4</span>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mobile_table_inner d-flex align-items-center">
+                    <div class="col-7">
+                      <div class="mobile_table_group left_mobile_table_items">
+                        <p>Group</p>
+                      </div>
+                    </div>
+                    <div class="col-5">
+                      <div class="table_group right_mobile_table_items">
+                        <p>Rules</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mobile_table_inner d-flex align-items-center">
+                    <div class="col-7">
+                      <div class="mobile_table_enabled left_mobile_table_items">
+                        <p>Enabled</p>
+                      </div>
+                    </div>
+                    <div class="col-5">
+                      <div class="table_enabled_pic right_mobile_table_items">
+                        <img src="./images/enabled.svg" alt="enabled">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mobile_table_inner d-flex align-items-center">
+                    <div class="col-7">
+                      <div class="mobile_table_ipaddress left_mobile_table_items">
+                        <p>IP Address/Prefix MAC</p>
+                      </div>
+                    </div>
+                    <div class="col-5">
+                      <div class="table_ipaddress right_mobile_table_items">
+                        <p>100.0.20/32</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mobile_table_inner d-flex align-items-center">
+                    <div class="col-7">
+                      <div class="mobile_table_comment left_mobile_table_items">
+                        <p>Comment</p>
+                      </div>
+                    </div>
+                    <div class="col-5">
+                      <div class="mobile_table_comment right_mobile_table_items">
+                        <p> veniam libero minima molestiaeis quod totam placeat nemo harum hic
+                          ducimus, nihil, ratione commodi!</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mobile_table_inner d-flex align-items-center">
+                    <div class="col-7">
+                      <div class="mobile_table_tcpTagging left_mobile_table_items">
+                        <p>Tcp Tagging</p>
+                      </div>
+                    </div>
+                    <div class="col-5">
+                      <div class="table_tcpTagging right_mobile_table_items">
+                        <p>SEQ</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mobile_table_inner d-flex align-items-center">
+                    <div class="col-7">
+                      <div class="mobile_table_remotekey left_mobile_table_items">
+                        <p>Remote Key</p>
+                      </div>
+                    </div>
+                    <div class="col-5">
+                      <div class="table_remotekey right_mobile_table_items">
+                        <p class="true_green">True</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-11 ">
+              <div class="mobile_table_outer p-4 mt-3">
+                <div class="row gx-0">
+                  <div class="mobile_table_inner d-flex align-items-center">
+                    <div class="col-7">
+                      <p class="left_mobile_table_items">Select</p>
+                    </div>
+                    <div class="col-5">
+                      <div class="mobile_table_input right_mobile_table_items">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mobile_table_inner d-flex align-items-center">
+                    <div class="col-7">
+                      <div class="mobile_table_action left_mobile_table_items">
+                        <p>Action</p>
+                      </div>
+                    </div>
+                    <div class="col-5">
+                      <div class="table_action table_items ms-0">
+                        <img class="table_3dot_menu" src="./images/table_3dot_menu.svg" alt="menu">
+                        <div class="edit_delete">
+                          <div class="edit_outer">
+                            <img src="./images/edit_icon.svg" alt="ed">
+                            <p class="edit_txt">Edit</p>
+                          </div>
+                          <div class="delete_outer">
+                            <img src="./images/delete_icon.svg" alt="ed">
+                            <p class="delete_txt">Delete</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="mobile_table_inner d-flex align-items-center">
+                    <div class="col-7">
+                      <div class="mobile_table_name left_mobile_table_items">
+                        <p>Name</p>
+                      </div>
+                    </div>
+                    <div class="col-5">
+                      <div class="table_name right_mobile_table_items">
+                        <p>AlphaTrust4</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mobile_table_inner d-flex align-items-center">
+                    <div class="col-7">
+                      <div class="mobile_table_trustlevel left_mobile_table_items">
+                        <p>Trust Level</p>
+                      </div>
+                    </div>
+                    <div class="col-5">
+                      <div class="mobile_table_trustlevel right_mobile_table_items">
+                        <p class="trust_level trust_level3"><span class="trustLvl_no">5</span>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mobile_table_inner d-flex align-items-center">
+                    <div class="col-7">
+                      <div class="mobile_table_group left_mobile_table_items">
+                        <p>Group</p>
+                      </div>
+                    </div>
+                    <div class="col-5">
+                      <div class="table_group right_mobile_table_items">
+                        <p>Endpoint</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mobile_table_inner d-flex align-items-center">
+                    <div class="col-7">
+                      <div class="mobile_table_enabled left_mobile_table_items">
+                        <p>Enabled</p>
+                      </div>
+                    </div>
+                    <div class="col-5">
+                      <div class="table_enabled_pic right_mobile_table_items">
+                        <img src="./images/enabled.svg" alt="enabled">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mobile_table_inner d-flex align-items-center">
+                    <div class="col-7">
+                      <div class="mobile_table_ipaddress left_mobile_table_items">
+                        <p>IP Address/Prefix MAC</p>
+                      </div>
+                    </div>
+                    <div class="col-5">
+                      <div class="table_ipaddress right_mobile_table_items">
+                        <p>100.0.20/32</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mobile_table_inner d-flex align-items-center">
+                    <div class="col-7">
+                      <div class="mobile_table_comment left_mobile_table_items">
+                        <p>Comment</p>
+                      </div>
+                    </div>
+                    <div class="col-5">
+                      <div class="mobile_table_comment right_mobile_table_items">
+                        <p> veniam libero minima molestiaeis quod totam placeat nemo harum hic
+                          ducimus, nihil, ratione commodi!</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mobile_table_inner d-flex align-items-center">
+                    <div class="col-7">
+                      <div class="mobile_table_tcpTagging left_mobile_table_items">
+                        <p>Tcp Tagging</p>
+                      </div>
+                    </div>
+                    <div class="col-5">
+                      <div class="table_tcpTagging right_mobile_table_items">
+                        <p>SEQ</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mobile_table_inner d-flex align-items-center">
+                    <div class="col-7">
+                      <div class="mobile_table_remotekey left_mobile_table_items">
+                        <p>Remote Key</p>
+                      </div>
+                    </div>
+                    <div class="col-5">
+                      <div class="table_remotekey right_mobile_table_items">
+                        <p class="false_red">False</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-11 ">
+              <div class="mobile_table_outer p-4 mt-3">
+                <div class="row gx-0">
+                  <div class="mobile_table_inner d-flex align-items-center">
+                    <div class="col-7">
+                      <p class="left_mobile_table_items">Select</p>
+                    </div>
+                    <div class="col-5">
+                      <div class="mobile_table_input right_mobile_table_items">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mobile_table_inner d-flex align-items-center">
+                    <div class="col-7">
+                      <div class="mobile_table_action left_mobile_table_items">
+                        <p>Action</p>
+                      </div>
+                    </div>
+                    <div class="col-5">
+                      <div class="table_action table_items ms-0">
+                        <img class="table_3dot_menu" src="./images/table_3dot_menu.svg" alt="menu">
+                        <div class="edit_delete">
+                          <div class="edit_outer">
+                            <img src="./images/edit_icon.svg" alt="ed">
+                            <p class="edit_txt">Edit</p>
+                          </div>
+                          <div class="delete_outer">
+                            <img src="./images/delete_icon.svg" alt="ed">
+                            <p class="delete_txt">Delete</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="edit_delete">
+                      <div class="edit_outer">
+                        <img src="./images/edit_icon.svg" alt="ed">
+                        <p class="edit_txt">Edit</p>
+                      </div>
+                      <div class="delete_outer">
+                        <img src="./images/delete_icon.svg" alt="ed">
+                        <p class="delete_txt">Delete</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mobile_table_inner d-flex align-items-center">
+                    <div class="col-7">
+                      <div class="mobile_table_name left_mobile_table_items">
+                        <p>Name</p>
+                      </div>
+                    </div>
+                    <div class="col-5">
+                      <div class="table_name right_mobile_table_items">
+                        <p>AlphaTrust7</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mobile_table_inner d-flex align-items-center">
+                    <div class="col-7">
+                      <div class="mobile_table_trustlevel left_mobile_table_items">
+                        <p>Trust Level</p>
+                      </div>
+                    </div>
+                    <div class="col-5">
+                      <div class="mobile_table_trustlevel right_mobile_table_items">
+                        <p class="trust_level trust_level4"><span class="trustLvl_no">6</span>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mobile_table_inner d-flex align-items-center">
+                    <div class="col-7">
+                      <div class="mobile_table_group left_mobile_table_items">
+                        <p>Group</p>
+                      </div>
+                    </div>
+                    <div class="col-5">
+                      <div class="table_group right_mobile_table_items">
+                        <p>Resources</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mobile_table_inner d-flex align-items-center">
+                    <div class="col-7">
+                      <div class="mobile_table_enabled left_mobile_table_items">
+                        <p>Enabled</p>
+                      </div>
+                    </div>
+                    <div class="col-5">
+                      <div class="table_enabled_pic right_mobile_table_items">
+                        <img src="./images/enabled.svg" alt="enabled">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mobile_table_inner d-flex align-items-center">
+                    <div class="col-7">
+                      <div class="mobile_table_ipaddress left_mobile_table_items">
+                        <p>IP Address/Prefix MAC</p>
+                      </div>
+                    </div>
+                    <div class="col-5">
+                      <div class="table_ipaddress right_mobile_table_items">
+                        <p>100.0.20/32</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mobile_table_inner d-flex align-items-center">
+                    <div class="col-7">
+                      <div class="mobile_table_comment left_mobile_table_items">
+                        <p>Comment</p>
+                      </div>
+                    </div>
+                    <div class="col-5">
+                      <div class="mobile_table_comment right_mobile_table_items">
+                        <p> veniam libero minima molestiaeis quod totam placeat nemo harum hic
+                          ducimus, nihil, ratione commodi!</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mobile_table_inner d-flex align-items-center">
+                    <div class="col-7">
+                      <div class="mobile_table_tcpTagging left_mobile_table_items">
+                        <p>Tcp Tagging</p>
+                      </div>
+                    </div>
+                    <div class="col-5">
+                      <div class="table_tcpTagging right_mobile_table_items">
+                        <p>SEQ</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mobile_table_inner d-flex align-items-center">
+                    <div class="col-7">
+                      <div class="mobile_table_remotekey left_mobile_table_items">
+                        <p>Remote Key</p>
+                      </div>
+                    </div>
+                    <div class="col-5">
+                      <div class="table_remotekey right_mobile_table_items">
+                        <p class="false_red">False</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-11 ">
+              <div class="mobile_table_outer p-4 mt-3">
+                <div class="row gx-0">
+                  <div class="mobile_table_inner d-flex align-items-center">
+                    <div class="col-7">
+                      <p class="left_mobile_table_items">Select</p>
+                    </div>
+                    <div class="col-5">
+                      <div class="mobile_table_input right_mobile_table_items">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mobile_table_inner d-flex align-items-center">
+                    <div class="col-7">
+                      <div class="mobile_table_action left_mobile_table_items">
+                        <p>Action</p>
+                      </div>
+                    </div>
+                    <div class="col-5">
+                      <div class="table_action table_items ms-0">
+                        <img class="table_3dot_menu" src="./images/table_3dot_menu.svg" alt="menu">
+                        <div class="edit_delete">
+                          <div class="edit_outer">
+                            <img src="./images/edit_icon.svg" alt="ed">
+                            <p class="edit_txt">Edit</p>
+                          </div>
+                          <div class="delete_outer">
+                            <img src="./images/delete_icon.svg" alt="ed">
+                            <p class="delete_txt">Delete</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mobile_table_inner d-flex align-items-center">
+                    <div class="col-7">
+                      <div class="mobile_table_name left_mobile_table_items">
+                        <p>Name</p>
+                      </div>
+                    </div>
+                    <div class="col-5">
+                      <div class="table_name right_mobile_table_items">
+                        <p>AlphaTrust3</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mobile_table_inner d-flex align-items-center">
+                    <div class="col-7">
+                      <div class="mobile_table_trustlevel left_mobile_table_items">
+                        <p>Trust Level</p>
+                      </div>
+                    </div>
+                    <div class="col-5">
+                      <div class="mobile_table_trustlevel right_mobile_table_items">
+                        <p class="trust_level trust_level5"><span class="trustLvl_no">7</span>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mobile_table_inner d-flex align-items-center">
+                    <div class="col-7">
+                      <div class="mobile_table_group left_mobile_table_items">
+                        <p>Group</p>
+                      </div>
+                    </div>
+                    <div class="col-5">
+                      <div class="table_group right_mobile_table_items">
+                        <p>Identities</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mobile_table_inner d-flex align-items-center">
+                    <div class="col-7">
+                      <div class="mobile_table_enabled left_mobile_table_items">
+                        <p>Enabled</p>
+                      </div>
+                    </div>
+                    <div class="col-5">
+                      <div class="table_enabled_pic right_mobile_table_items">
+                        <img src="./images/enabled.svg" alt="enabled">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mobile_table_inner d-flex align-items-center">
+                    <div class="col-7">
+                      <div class="mobile_table_ipaddress left_mobile_table_items">
+                        <p>IP Address/Prefix MAC</p>
+                      </div>
+                    </div>
+                    <div class="col-5">
+                      <div class="table_ipaddress right_mobile_table_items">
+                        <p>100.0.20/32</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mobile_table_inner d-flex align-items-center">
+                    <div class="col-7">
+                      <div class="mobile_table_comment left_mobile_table_items">
+                        <p>Comment</p>
+                      </div>
+                    </div>
+                    <div class="col-5">
+                      <div class="mobile_table_comment right_mobile_table_items">
+                        <p> veniam libero minima molestiaeis quod totam placeat nemo harum hic
+                          ducimus, nihil, ratione commodi!</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mobile_table_inner d-flex align-items-center">
+                    <div class="col-7">
+                      <div class="mobile_table_tcpTagging left_mobile_table_items">
+                        <p>Tcp Tagging</p>
+                      </div>
+                    </div>
+                    <div class="col-5">
+                      <div class="table_tcpTagging right_mobile_table_items">
+                        <p>SEQ</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mobile_table_inner d-flex align-items-center">
+                    <div class="col-7">
+                      <div class="mobile_table_remotekey left_mobile_table_items">
+                        <p>Remote Key</p>
+                      </div>
+                    </div>
+                    <div class="col-5">
+                      <div class="table_remotekey right_mobile_table_items">
+                        <p class="true_green">True</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-11 ">
+              <div class="mobile_table_outer p-4 mt-3">
+                <div class="row gx-0">
+                  <div class="mobile_table_inner d-flex align-items-center">
+                    <div class="col-7">
+                      <p class="left_mobile_table_items">Select</p>
+                    </div>
+                    <div class="col-5">
+                      <div class="mobile_table_input right_mobile_table_items">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mobile_table_inner d-flex align-items-center">
+                    <div class="col-7">
+                      <div class="mobile_table_action left_mobile_table_items">
+                        <p>Action</p>
+                      </div>
+                    </div>
+                    <div class="col-5">
+                      <div class="table_action table_items ms-0">
+                        <img class="table_3dot_menu" src="./images/table_3dot_menu.svg" alt="menu">
+                        <div class="edit_delete">
+                          <div class="edit_outer">
+                            <img src="./images/edit_icon.svg" alt="ed">
+                            <p class="edit_txt">Edit</p>
+                          </div>
+                          <div class="delete_outer">
+                            <img src="./images/delete_icon.svg" alt="ed">
+                            <p class="delete_txt">Delete</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mobile_table_inner d-flex align-items-center">
+                    <div class="col-7">
+                      <div class="mobile_table_name left_mobile_table_items">
+                        <p>Name</p>
+                      </div>
+                    </div>
+                    <div class="col-5">
+                      <div class="table_name right_mobile_table_items">
+                        <p>AlphaTrust4</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mobile_table_inner d-flex align-items-center">
+                    <div class="col-7">
+                      <div class="mobile_table_trustlevel left_mobile_table_items">
+                        <p>Trust Level</p>
+                      </div>
+                    </div>
+                    <div class="col-5">
+                      <div class="mobile_table_trustlevel right_mobile_table_items">
+                        <p class="trust_level trust_level1"><span class="trustLvl_no">1</span>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mobile_table_inner d-flex align-items-center">
+                    <div class="col-7">
+                      <div class="mobile_table_group left_mobile_table_items">
+                        <p>Group</p>
+                      </div>
+                    </div>
+                    <div class="col-5">
+                      <div class="table_group right_mobile_table_items">
+                        <p>Rules</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mobile_table_inner d-flex align-items-center">
+                    <div class="col-7">
+                      <div class="mobile_table_enabled left_mobile_table_items">
+                        <p>Enabled</p>
+                      </div>
+                    </div>
+                    <div class="col-5">
+                      <div class="table_enabled_pic right_mobile_table_items">
+                        <img src="./images/enabled.svg" alt="enabled">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mobile_table_inner d-flex align-items-center">
+                    <div class="col-7">
+                      <div class="mobile_table_ipaddress left_mobile_table_items">
+                        <p>IP Address/Prefix MAC</p>
+                      </div>
+                    </div>
+                    <div class="col-5">
+                      <div class="table_ipaddress right_mobile_table_items">
+                        <p>100.0.20/32</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mobile_table_inner d-flex align-items-center">
+                    <div class="col-7">
+                      <div class="mobile_table_comment left_mobile_table_items">
+                        <p>Comment</p>
+                      </div>
+                    </div>
+                    <div class="col-5">
+                      <div class="mobile_table_comment right_mobile_table_items">
+                        <p> veniam libero minima molestiaeis quod totam placeat nemo harum hic
+                          ducimus, nihil, ratione commodi!</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mobile_table_inner d-flex align-items-center">
+                    <div class="col-7">
+                      <div class="mobile_table_tcpTagging left_mobile_table_items">
+                        <p>Tcp Tagging</p>
+                      </div>
+                    </div>
+                    <div class="col-5">
+                      <div class="table_tcpTagging right_mobile_table_items">
+                        <p>SEQ</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mobile_table_inner d-flex align-items-center">
+                    <div class="col-7">
+                      <div class="mobile_table_remotekey left_mobile_table_items">
+                        <p>Remote Key</p>
+                      </div>
+                    </div>
+                    <div class="col-5">
+                      <div class="table_remotekey right_mobile_table_items">
+                        <p class="false_red">False</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- filterpopup -->
+          <div class="filter_outer_bg"></div>
+          <div class="row">
+            <div>
+              <div class="filterSecform bg-white col-xl-3 col-12 col-md-5">
+                <div class="popup_addIdentity_header">
+                  <p class="addIdentity_text">Filter Option</p>
+                  <img class="close_filter_img " src="./images/close_icon.svg" alt="close_icon">
+                </div>
+                <div class="filter_outer_input">
+                  <label class="fname" for="fname">Name</label>
+                  <div class="filter_inner">
+                    <div class="unchecked_img"></div>
+                    <input class="row1_input form-control" id="" type="text" placeholder="">
+                  </div>
+                </div>
+                <div class="filter_outer_input">
+                  <label class="fname" for="fname">Group</label>
+                  <div class="filter_inner">
+                    <div class="unchecked_img"></div>
+                    <input class="row1_input form-control" id="" type="text" placeholder="">
+                  </div>
+                </div>
+                <div class="filter_outer_input">
+                  <label class="fname" for="fname">Trust Level</label>
+                  <div class="filter_inner">
+                    <div class="unchecked_img"></div>
+                    <input class="row1_input form-control" id="" type="text" placeholder="">
+                  </div>
+                </div>
+                <div class="filter_outer_input">
+                  <label class="fname" for="fname">IP address / Prefix Mac</label>
+                  <div class="filter_inner">
+                    <div class="unchecked_img"></div>
+                    <input class="row1_input form-control" id="" type="text" placeholder="">
+                  </div>
+                </div>
+                <div class="filter_outer_input">
+                  <label class="fname" for="fname">Comment</label>
+                  <div class="filter_inner">
+                    <div class="unchecked_img"></div>
+                    <input class="row1_input form-control" id="" type="text" placeholder="">
+                  </div>
+                </div>
+                <div class="filter_outer_input">
+                  <label class="fname" for="fname">Tcp Tagging</label>
+                  <div class="filter_inner">
+                    <div class="unchecked_img"></div>
+                    <input class="row1_input form-control" id="" type="text" placeholder="">
+                  </div>
+                </div>
+                <div class="filter_outer_input">
+                  <label class="fname" for="fname">Remote Key</label>
+                  <div class="filter_inner">
+                    <div class="unchecked_img"></div>
+                    <input class="row1_input form-control" id="" type="text" placeholder="">
+                  </div>
+                </div>
+                <div class="filter_outer_input">
+                  <label class="fname" for="fname">Enabled</label>
+                  <div class="filter_inner">
+                    <div class="checked_img"></div>
+                    <input class="row1_input form-control" id="" type="text" placeholder="">
+                  </div>
+                </div>
+                <div class="filter_btns">
+                  <button class="cancel_btn_filter">Cancel</button>
+                  <button class="apply_btn_filter">Apply</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <section class="pagination_table d-flex justify-content-lg-end justify-content-center ">
+            <a class="startarrow" href="#">
+              <img src="./images/startarrow.png" alt="startarrow">
+            </a>
+            <a href="#">1</a>
+            <a href="#" class="active">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#">6</a>
+            <a class="endarrow" href="#">
+              <img src="./images/endarrow.png" alt="end">
+            </a>
+          </section>
+        </div>
+      </div>
+      <!-- change -->
+      <div class="statistics_sec container-fluid">
+        <div class="content_spacing_s">
+          <div class="s_header d-flex justify-content-between align-items-center">
+            <p class="Statistics_text">Statistics</p>
+            <img class="s_close_icon" src="./images/close_icon.svg" alt="close">
+          </div>
+          <div class="row gx-0">
+            <div
+              class="s_search_timeperiod d-flex justify-content-md-between justify-content-sm-center justify-content-center  align-items-center flex-wrap">
+              <div class="left_s position-relative">
+                <input class="search_input_s" placeholder="Search..">
+                <img class="s_searchicon position-absolute" src="./images/mg_searchicon.svg">
+              </div>
+              <div class="col-12 col-sm-7 col-md-9">
+                <ul class="time_period d-flex align-items-center p-0 d-md-flex justify-content-md-end mt-2">
+                  <li class="d-flex align-items-center justify-content-center m-1">1 Day</li>
+                  <li class="d-flex align-items-center justify-content-center m-1">1 Week</li>
+                  <li class="d-flex align-items-center justify-content-center m-1">1 Month</li>
+                  <li class="d-flex align-items-center justify-content-center m-1">6 Months</li>
+                  <li class="d-flex align-items-center justify-content-center m-1">1 Year</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="row m-0">
+            <div class="outer_s_items  d-flex flex-wrap">
+              <div class="col-xl-3  col-md-4 col-sm-6 col-12 p-0">
+                <div class="s_items">
+                  <div class="s_img1 subCircle s_img">
+                    <img src="./images/s1.svg" alt="s1">
+                  </div>
+                  <p class="s_no">402</p>
+                  <p class="s_text">TCP Packet In</p>
+                </div>
+              </div>
+              <div class="col-xl-3  col-md-4 col-sm-6 col-12 p-0">
+                <div class="s_items">
+                  <div class="s_img2 subCircle s_img">
+                    <img src="./images/s2.svg" alt="s1">
+                  </div>
+                  <p class="s_no">7</p>
+                  <p class="s_text">TCP Drop Id</p>
+                </div>
+              </div>
+              <div class="col-xl-3  col-md-4 col-sm-6 col-12 p-0">
+                <div class="s_items">
+                  <div class="s_img3 subCircle s_img">
+                    <img src="./images/s3.svg" alt="s1">
+                  </div>
+                  <p class="s_no">0</p>
+                  <p class="s_text">TCP Forward</p>
+                </div>
+              </div>
+              <div class="col-xl-3 col-md-4 col-sm-6 col-12 p-0">
+                <div class="s_items">
+                  <div class="s_img4 subCircle s_img">
+                    <img src="./images/s4.svg" alt="s1">
+                  </div>
+                  <p class="s_no">704263425</p>
+                  <p class="s_text">TCP splice</p>
+                </div>
+              </div>
+              <div class="col-xl-3  col-md-4 col-sm-6 col-12 p-0">
+                <div class="s_items">
+                  <div class="s_img5 subCircle s_img">
+                    <img src="./images/s5.svg" alt="s1">
+                  </div>
+                  <p class="s_no">29503251000</p>
+                  <p class="s_text">TCP Splice Tagged</p>
+                </div>
+              </div>
+              <div class="col-xl-3 col-md-4 col-sm-6 col-12 p-0">
+                <div class="s_items">
+                  <div class="s_img6 subCircle s_img">
+                    <img src="./images/s6.svg" alt="s1">
+                  </div>
+                  <p class="s_no">19166274399999</p>
+                  <p class="s_text">TCP Splice Anonymous</p>
+                </div>
+              </div>
+              <div class="col-xl-3 col-md-4 col-sm-6 col-12 p-0">
+                <div class="s_items">
+                  <div class="s_img7 subCircle s_img">
+                    <img src="./images/s7.svg" alt="s1">
+                  </div>
+                  <p class="s_no">84418926</p>
+                  <p class="s_text">Token Insert</p>
+                </div>
+              </div>
+              <div class="col-xl-3 col-md-4 col-sm-6 col-12 p-0">
+                <div class="s_items">
+                  <div class="s_img8 subCircle s_img">
+                    <img src="./images/s8.svg" alt="s1">
+                  </div>
+                  <p class="s_no">807101193</p>
+                  <p class="s_text">Token Validate</p>
+                </div>
+              </div>
+              <div class="col-xl-3 col-md-4 col-sm-6 col-12 p-0">
+                <div class="s_items">
+                  <div class="s_img9 subCircle s_img">
+                    <img src="./images/s9.svg" alt="s1">
+                  </div>
+                  <p class="s_no">424820547</p>
+                  <p class="s_text">Threshold Not Met</p>
+                </div>
+              </div>
+              <div class="col-xl-3 col-md-4 col-sm-6 col-12 p-0">
+                <div class="s_items">
+                  <div class="s_img10 subCircle s_img">
+                    <img src="./images/s10.svg" alt="s1">
+                  </div>
+                  <p class="s_no">910090774</p>
+                  <p class="s_text">Token Collision</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="identities_rules_sec container-fluid">
+          <div class="content_spacing_s">
+            <div class="s_header d-flex justify-content-between align-items-center">
+              <p class="Statistics_text">Identities</p>
+              <img class="s_close_icon" src="./images/close_icon.svg" alt="close">
+            </div>
+            <div class="outer_identities">
+              <div class="row m-0">
+                <div class="outer_s_items d-flex flex-wrap">
+                  <div class="col-xl-3 col-md-4 col-sm-6 col-12 p-0 p-0">
+                    <div class="s_items  identity_items">
+                      <div class="identity_img1 subCircle s_img">
+                        <img src="./images/i1.svg" alt="s1">
+                      </div>
+                      <p class="s_no identity_no">402</p>
+                      <p class="s_text">TCP Packet In</p>
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-md-4 col-sm-6 col-12 p-0 p-0">
+                    <div class="s_items identity_items">
+                      <div class="identity_img2 subCircle s_img">
+                        <img src="./images/i2.svg" alt="s1">
+                      </div>
+                      <p class="s_no identity_no">402</p>
+                      <p class="s_text">TCP Packet In</p>
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-md-4 col-sm-6 col-12 p-0 p-0">
+                    <div class="s_items identity_items">
+                      <div class="identity_img3 subCircle s_img">
+                        <img src="./images/i3.svg" alt="s1">
+                      </div>
+                      <p class="s_no identity_no">424820547</p>
+                      <p class="s_text">Threshold Not Met</p>
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-md-4 col-sm-6 col-12 p-0 p-0">
+                    <div class="s_items identity_items">
+                      <div class="identity_img4 subCircle s_img">
+                        <img src="./images/i4.svg" alt="s1">
+                      </div>
+                      <p class="s_no identity_no">910090774</p>
+                      <p class="s_text">Token Collision</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <p class="Statistics_text rules_text">Rules</p>
+            <div class="row m-0">
+              <div class="outer_s_items">
+                <div class="col-xl-3 col-md-4 col-sm-6 col-12 p-0">
+                  <div class="s_items identity_items">
+                    <div class="rules_img1 subCircle s_img">
+                      <img src="./images/r1.svg" alt="s1">
+                    </div>
+                    <p class="s_no identity_no">402</p>
+                    <p class="s_text">TCP Packet In</p>
+                  </div>
+                </div>
+                <div class="col-xl-3 col-md-4 col-sm-6 col-12 p-0">
+                  <div class="s_items identity_items">
+                    <div class="rules_img2 subCircle s_img">
+                      <img src="./images/r2.svg" alt="s1">
+                    </div>
+                    <p class="s_no identity_no">402</p>
+                    <p class="s_text">TCP Packet In</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="trust_level_sec container-fluid">
+        <div class="content_spacing_s">
+          <div class="row">
+            <div class="col-12">
+              <div class="s_header d-flex justify-content-between align-items-center">
+                <p class="Statistics_text">Trust Level</p>
+                <img class="s_close_icon" src="./images/close_icon.svg" alt="close">
+              </div>
+              <div class="sum_outer d-flex align-items-center justify-content-end">
+                <div class="sum_identity d-flex align-items-center justify-content-around">
+                  <p class="box box1"></p>
+                  <p>Sum of Identities</p>
+                </div>
+                <div class="sum_rules d-flex align-items-center justify-content-around">
+                  <p class="box box2"></p>
+                  <p>Sum of Rules</p>
+                </div>
+              </div>
+              <div class="col-12 d-flex justify-content-center">
+                <img class="graph_img img-fluid" src="./images/graph.svg" alt="grph">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="dashboard_close_sec container-fluid">
+        <div class="content_spacing overflow-hidden">
+          <div class="row p-0">
+            <section class="breadcrumb_sec d-flex align-items-center justify-content-between px-0">
+              <div class="col-6">
+                <nav class="nav_breadcrumb" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                  <p class="dashboard_text">Dashboard</p>
+                </nav>
+              </div>
+              <div class="col-6">
+                <div class="right_setting position-relative me-4">
+                  <p>BRGW-I-431</p>
+                  <p>Connected Gateway 55</p>
+                  <img class="close_icon_dashboard" src="./images/close_icon.svg" alt="close">
+                </div>
+              </div>
+            </section>
+          </div>
+          <div class="container-fluid p-0 m-0">
+            <div class="threeSections mt-2">
+              <div class="row px-0">
+                <div class="col-12 h-auto col-xl-6 m-0  col-md-12 mt-md-0 p-0">
+                  <div class="manageGateway_sec me-xl-3 me-col-0">
+                    <div class="manageGateway_heading">
+                      <p>Manage Gateway</p>
+                      <p>BRGW-I-431</p>
+                      <img class="close_icon_dashboard" src="./images/close_icon.svg" alt="close">
+                    </div>
+                    <div class="outer_mg  d-flex align-items-center justify-content-between flex-wrap">
+                      <div class="search_ManageGateway col-12 col-sm-2 position-relative"">
+                                                <input class=" search_input" placeholder="Search..">
+                        <img class="mg_searchicon position-absolute" src="./images/mg_searchicon.svg">
+                        </input>
+                      </div>
+                      <div class="leftBtn_content d-flex align-items-center justify-content-center pt-sm-0 pt-3">
+                        <div class="Btn_div1">
+                          <button type="button" class="remove_btn">Remove
+                            <img class="mg_remove_pic" src="./images/mg_remove.svg" alt="mg_remove">
+                          </button>
+                        </div>
+                        <div class="Btn_div2">
+                          <button type="button" class="add_btn">Add
+                            <img class="mg_add_pic" src="./images/mg_add.svg" alt="mg_remove">
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="items">
+                      <div class="mg_items form-check">
+                        <div class="inner_mg_items1">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                          <label class="form-check-label gatewayText" for="flexCheckDefault">
+                            Gateway
+                          </label>
+                        </div>
+                        <div class="inner_mg_items2">
+                          <p class="certificate_Expiry">Certificate Expiry</p>
+                        </div>
+                      </div>
+                      <div class="mg_items form-check">
+                        <div class="inner_mg_items1">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                          <label class="form-check-label" for="flexCheckDefault">
+                            BRGW-I-431
+                          </label>
+                        </div>
+                        <div class="inner_mg_items2">
+                          <p>
+                            05/09/2021
+                          </p>
+                        </div>
+                      </div>
+                      <div class="mg_items form-check">
+                        <div class="inner_mg_items1">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                          <label class="form-check-label" for="flexCheckDefault">
+                            BRGW-3-520
+                          </label>
+                        </div>
+                        <div class="inner_mg_items2">
+                          <p>
+                            05/09/2021
+                          </p>
+                        </div>
+                      </div>
+                      <div class="mg_items form-check">
+                        <div class="inner_mg_items1">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                          <label class="form-check-label" for="flexCheckDefault">
+                            BRGW-2-321
+                          </label>
+                        </div>
+                        <div class="inner_mg_items2">
+                          <p>
+                            05/09/2021
+                          </p>
+                        </div>
+                      </div>
+                      <div class="mg_items form-check">
+                        <div class="inner_mg_items1">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                          <label class="form-check-label" for="flexCheckDefault">
+                            BRGW-2-341
+                          </label>
+                        </div>
+                        <div class="inner_mg_items2">
+                          <p>
+                            11/09/2021
+                          </p>
+                        </div>
+                      </div>
+                      <div class="mg_items form-check">
+                        <div class="inner_mg_items1">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                          <label class="form-check-label" for="flexCheckDefault">
+                            BRGW-I-431
+                          </label>
+                        </div>
+                        <div class="inner_mg_items2">
+                          <p>
+                            12/09/2021
+                          </p>
+                        </div>
+                      </div>
+                      <div class="mg_items form-check">
+                        <div class="inner_mg_items1">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                          <label class="form-check-label" for="flexCheckDefault">
+                            BRGW-I-431
+                          </label>
+                        </div>
+                        <div class="inner_mg_items2">
+                          <p>
+                            13/09/2021
+                          </p>
+                        </div>
+                      </div>
+                      <div class="mg_items form-check">
+                        <div class="inner_mg_items1">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                          <label class="form-check-label" for="flexCheckDefault">
+                            BRGW-R-111
+                          </label>
+                        </div>
+                        <div class="inner_mg_items2">
+                          <p>
+                            14/09/2021
+                          </p>
+                        </div>
+                      </div>
+                      <div class="mg_items form-check">
+                        <div class="inner_mg_items1">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                          <label class="form-check-label" for="flexCheckDefault">
+                            BRGW-2-341
+                          </label>
+                        </div>
+                        <div class="inner_mg_items2">
+                          <p>
+                            15/09/2021
+                          </p>
+                        </div>
+                      </div>
+                      <div class="mg_items form-check">
+                        <div class="inner_mg_items1">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                          <label class="form-check-label" for="flexCheckDefault">
+                            BRGW-I-874
+                          </label>
+                        </div>
+                        <div class="inner_mg_items2">
+                          <p>
+                            16/09/2021
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="outer_save_continue_btn d-flex justify-content-center">
+                      <button class="save_continue_btn">Save & Continue</button>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="col-12 mt-3 mt-sm-3 me-0 mt-xl-0 col-mt-3 col-xl-3 col-sm-12 pe-md-3 pe-xl-0 col-md-6  col-xl-3 p-0">
+                  <div class="summary_sec me-xl-3">
+                    <div class="summary_heading d-flex align-items-start justify-content-between">
+                      <p class="summary_heading">Summary</p>
+                      <img src="./images/3dot_menu.svg" alt="img">
+                    </div>
+                    <div class="summary_items">
+                      <div class="summaryImg1">
+                        <img src="./images/summary1.svg" alt="summary1">
+                      </div>
+                      <div class="summary_inner_items">
+                        <p class="summary_no">10.0.10.10</p>
+                        <p class="summary_text">Host Name</p>
+                      </div>
+                    </div>
+                    <div class="summary_items">
+                      <div class="summaryImg2">
+                        <img src="./images/summary2.svg" alt="summary1">
+                      </div>
+                      <div class="summary_inner_items">
+                        <p class="summary_no">Not Configured</p>
+                        <p class="summary_text">Host Name</p>
+                      </div>
+                    </div>
+                    <div class="summary_items">
+                      <div class="summaryImg3">
+                        <img src="./images/summary3.svg" alt="summary1">
+                      </div>
+                      <div class="summary_inner_items">
+                        <p class="summary_no">Not Configured</p>
+                        <p class="summary_text">Host Name</p>
+                      </div>
+                    </div>
+                    <div class="summary_items">
+                      <div class="summaryImg4">
+                        <img src="./images/summary4.svg" alt="summary1">
+                      </div>
+                      <div class="summary_inner_items">
+                        <p class="summary_no">Alpha-GW.infovision.io</p>
+                        <p class="summary_text">FQDN</p>
+                      </div>
+                    </div>
+                    <div class="summary_items">
+                      <div class="summaryImg5">
+                        <img src="./images/summary5.svg" alt="summary1">
+                      </div>
+                      <div class="summary_inner_items">
+                        <p class="summary_no">4.3.1.1_1</p>
+                        <p class="summary_text">Version</p>
+                      </div>
+                    </div>
+                    <div class="summary_items">
+                      <div class="summaryImg6">
+                        <img src="./images/summary6.svg" alt="summary1">
+                      </div>
+                      <div class="summary_inner_items">
+                        <p class="summary_no">35 hrs, 20 min, 44 sec</p>
+                        <p class="summary_text">Uptime</p>
+                      </div>
+                    </div>
+                    <div class="summary_items sub_summary_items">
+                      <div class="summaryImg7">
+                        <img src="./images/summary6.svg" alt="summary1">
+                      </div>
+                      <div class="summary_inner_items">
+                        <p class="summary_no summary_no_red">Fri, Aug 25, 2022 03:15:25 PM </p>
+                        <p class="summary_text">Gateway certificate Expiry</p>
+                      </div>
+                      <div class="gatewayDiv position-absolute top-0 start-0">
+                        <p>Gateway Certificate</p>
+                        <p> Expiry 30 Days More...</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 mt-3 mt-sm-3 me-0 mt-xl-0 col-mt-3 col-xl-3 col-sm-12 col-md-6  col-xl-3 p-0">
+                  <div class="services_sec">
+                    <div class="services_heading d-flex align-items-start justify-content-between">
+                      <p>Services</p>
+                      <img src="./images/3dot_menu.svg" alt="img">
+                    </div>
+                    <div class="service_items">
+                      <div class="serviceImg_crt">
+                        <img src="./images/services_crt.svg" alt="services_crt">
+                      </div>
+
+                      <div class="service_inner_items">
+                        <p class="enabled_green">Enabled</p>
+                        <p>Distributed Processing</p>
+                      </div>
+                    </div>
+                    <div class="service_items">
+                      <div class="serviceImg_worng">
+                        <img src="./images/services_wrong.svg" alt="services_crt">
+                      </div>
+                      <div class="service_inner_items">
+                        <p>Disabled</p>
+                        <p>Publisher</p>
+                      </div>
+                    </div>
+                    <div class="service_items">
+                      <div class="serviceImg_crt">
+                        <img src="./images/services_crt.svg" alt="services_crt">
+                      </div>
+
+                      <div class="service_inner_items">
+                        <p class="enabled_green">Enabled</p>
+                        <p>Subscriber</p>
+                      </div>
+                    </div>
+                    <div class="service_items">
+                      <div class="serviceImg_crt">
+                        <img src="./images/services_crt.svg" alt="services_crt">
+                      </div>
+
+                      <div class="service_inner_items">
+                        <p class="enabled_green">Enabled</p>
+                        <p>Layer3</p>
+                      </div>
+                    </div>
+                    <div class="service_items">
+                      <div class="serviceImg_worng">
+                        <img src="./images/services_wrong.svg" alt="services_crt">
+                      </div>
+
+                      <div class="service_inner_items">
+                        <p>Disabled</p>
+                        <p>IAS</p>
+                      </div>
+                    </div>
+                    <div class="service_items">
+                      <div class="serviceImg_worng">
+                        <img src="./images/services_wrong.svg" alt="services_crt">
+                      </div>
+                      <div class="service_inner_items">
+                        <p>Disabled</p>
+                        <p>Remote Keying</p>
+                      </div>
+                    </div>
+                    </d>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- menu -->
+            <div class="row">
+              <div>
+                <div class="offcanvas subcanvas col-10 col-sm-5 col-md-4 col-xl-2" tabindex="-1" id="offcanvasExample"
+                  aria-labelledby="offcanvasExampleLabel">
+                  <div class="offcanvas-body">
+                    <div class="main_menu">
+                      <div class="menu_items dashBoard_menu">
+                        <img src="./images/dashboard_menu.svg" alt="explore_menu">
+                        <p class="dashBoard">
+                          <a href="./index.html">DashBoard</a>
+                        </p>
+                      </div>
+                      <div class="sub_menu_items_explore">
+                        <div class="menu_items explore_menu">
+                          <img src="./images/explore_menu.svg" alt="explore_menu">
+                          <p class="explore">Explore</p>
+                          <img class="arrow" src="./images/Arrow.svg" alt="arrow">
+                        </div>
+                        <ul class="exploreSubmenu  animateNone">
+                          <li class="liActive">
+                            <a class="identityManagement" href="./identitityManagement.html">Identity
+                              Management</a>
+                          </li>
+                          <li><a href="https://www.google.com/">Rules Management</a></li>
+                          <li><a href="./trust_level.html">Trust Level</a></li>
+                          <li><a href="https://www.google.com/">Resource Management</a></li>
+                          <li><a href="https://www.google.com/">Resource List Management</a>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="menu_items">
+                        <img src="./images/management_menu.svg" alt="explore_menu">
+                        <p class="management_network">Management Network</p>
+                      </div>
+                      <div class="menu_items">
+                        <img src="./images/gatewayServices_menu.svg" alt="explore_menu">
+                        <p class="gateway_services">Gateway Services</p>
+                      </div>
+                      <div class="menu_items">
+                        <img src="./images/endpoint_menu.svg" alt="explore_menu">
+                        <p class="endpoint">Endpoint</p>
+                        <img class="arrow" id="endpointArrow" src="./images/Arrow.svg" alt="arrow">
+                      </div>
+                      <div class="menu_items">
+                        <img src="./images/maintenance_menu.svg" alt="explore_menu">
+                        <p class="maintenance"> Maintenance</p>
+                      </div>
+                      <div class="menu_items">
+                        <img src="./images/monitoring_menu.svg" alt="explore_menu">
+                        <p class="monitoring">Monitoring</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </section>
+        <section class="statistics_sec">
+          <div class="content_spacing_s">
+            <div class="s_header d-flex justify-content-between align-items-center">
+              <p class="Statistics_text">Statistics</p>
+              <img class="s_close_icon" src="./images/close_icon.svg" alt="close">
+            </div>
+            <div class="row gx-0">
+              <div
+                class="s_search_timeperiod d-flex justify-content-md-between justify-content-sm-center justify-content-center  align-items-center flex-wrap">
+                <div class="left_s position-relative">
+                  <input class="search_input_s" placeholder="Search..">
+                  <img class="s_searchicon position-absolute" src="./images/mg_searchicon.svg">
+                </div>
+                <div class="col-12 col-sm-7 col-md-9">
+                  <ul class="time_period d-flex align-items-center p-0 d-md-flex justify-content-md-end mt-2">
+                    <li class="d-flex align-items-center justify-content-center m-1">1 Day</li>
+                    <li class="d-flex align-items-center justify-content-center m-1">1 Week</li>
+                    <li class="d-flex align-items-center justify-content-center m-1">1 Month</li>
+                    <li class="d-flex align-items-center justify-content-center m-1">6 Months</li>
+                    <li class="d-flex align-items-center justify-content-center m-1">1 Year</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="row m-0">
+              <div class="outer_s_items  d-flex flex-wrap">
+                <div class="col-xl-3  col-md-4 col-sm-6 col-12 p-0">
+                  <div class="s_items">
+                    <div class="s_img1 subCircle s_img">
+                      <img src="./images/s1.svg" alt="s1">
+                    </div>
+                    <p class="s_no">402</p>
+                    <p class="s_text">TCP Packet In</p>
+                  </div>
+                </div>
+                <div class="col-xl-3  col-md-4 col-sm-6 col-12 p-0">
+                  <div class="s_items">
+                    <div class="s_img2 subCircle s_img">
+                      <img src="./images/s2.svg" alt="s1">
+                    </div>
+                    <p class="s_no">7</p>
+                    <p class="s_text">TCP Drop Id</p>
+                  </div>
+                </div>
+                <div class="col-xl-3  col-md-4 col-sm-6 col-12 p-0">
+                  <div class="s_items">
+                    <div class="s_img3 subCircle s_img">
+                      <img src="./images/s3.svg" alt="s1">
+                    </div>
+                    <p class="s_no">0</p>
+                    <p class="s_text">TCP Forward</p>
+                  </div>
+                </div>
+                <div class="col-xl-3 col-md-4 col-sm-6 col-12 p-0">
+                  <div class="s_items">
+                    <div class="s_img4 subCircle s_img">
+                      <img src="./images/s4.svg" alt="s1">
+                    </div>
+                    <p class="s_no">704263425</p>
+                    <p class="s_text">TCP splice</p>
+                  </div>
+                </div>
+                <div class="col-xl-3  col-md-4 col-sm-6 col-12 p-0">
+                  <div class="s_items">
+                    <div class="s_img5 subCircle s_img">
+                      <img src="./images/s5.svg" alt="s1">
+                    </div>
+                    <p class="s_no">29503251000</p>
+                    <p class="s_text">TCP Splice Tagged</p>
+                  </div>
+                </div>
+                <div class="col-xl-3 col-md-4 col-sm-6 col-12 p-0">
+                  <div class="s_items">
+                    <div class="s_img6 subCircle s_img">
+                      <img src="./images/s6.svg" alt="s1">
+                    </div>
+                    <p class="s_no">19166274399999</p>
+                    <p class="s_text">TCP Splice Anonymous</p>
+                  </div>
+                </div>
+                <div class="col-xl-3 col-md-4 col-sm-6 col-12 p-0">
+                  <div class="s_items">
+                    <div class="s_img7 subCircle s_img">
+                      <img src="./images/s7.svg" alt="s1">
+                    </div>
+                    <p class="s_no">84418926</p>
+                    <p class="s_text">Token Insert</p>
+                  </div>
+                </div>
+                <div class="col-xl-3 col-md-4 col-sm-6 col-12 p-0">
+                  <div class="s_items">
+                    <div class="s_img8 subCircle s_img">
+                      <img src="./images/s8.svg" alt="s1">
+                    </div>
+                    <p class="s_no">807101193</p>
+                    <p class="s_text">Token Validate</p>
+                  </div>
+                </div>
+                <div class="col-xl-3 col-md-4 col-sm-6 col-12 p-0">
+                  <div class="s_items">
+                    <div class="s_img9 subCircle s_img">
+                      <img src="./images/s9.svg" alt="s1">
+                    </div>
+                    <p class="s_no">424820547</p>
+                    <p class="s_text">Threshold Not Met</p>
+                  </div>
+                </div>
+                <div class="col-xl-3 col-md-4 col-sm-6 col-12 p-0">
+                  <div class="s_items">
+                    <div class="s_img10 subCircle s_img">
+                      <img src="./images/s10.svg" alt="s1">
+                    </div>
+                    <p class="s_no">910090774</p>
+                    <p class="s_text">Token Collision</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div class="row">
+          <section class="identities_rules_sec">
+            <div class="content_spacing_s">
+              <div class="s_header d-flex justify-content-between align-items-center">
+                <p class="Statistics_text">Identities</p>
+                <img class="s_close_icon" src="./images/close_icon.svg" alt="close">
+              </div>
+              <div class="outer_identities">
+                <div class="row m-0">
+                  <div class="outer_s_items d-flex flex-wrap">
+                    <div class="col-xl-3 col-md-4 col-sm-6 col-12 p-0 p-0">
+                      <div class="s_items  identity_items">
+                        <div class="identity_img1 subCircle s_img">
+                          <img src="./images/i1.svg" alt="s1">
+                        </div>
+                        <p class="s_no identity_no">402</p>
+                        <p class="s_text">TCP Packet In</p>
+                      </div>
+                    </div>
+                    <div class="col-xl-3 col-md-4 col-sm-6 col-12 p-0 p-0">
+                      <div class="s_items identity_items">
+                        <div class="identity_img2 subCircle s_img">
+                          <img src="./images/i2.svg" alt="s1">
+                        </div>
+                        <p class="s_no identity_no">402</p>
+                        <p class="s_text">TCP Packet In</p>
+                      </div>
+                    </div>
+                    <div class="col-xl-3 col-md-4 col-sm-6 col-12 p-0 p-0">
+                      <div class="s_items identity_items">
+                        <div class="identity_img3 subCircle s_img">
+                          <img src="./images/i3.svg" alt="s1">
+                        </div>
+                        <p class="s_no identity_no">424820547</p>
+                        <p class="s_text">Threshold Not Met</p>
+                      </div>
+                    </div>
+                    <div class="col-xl-3 col-md-4 col-sm-6 col-12 p-0 p-0">
+                      <div class="s_items identity_items">
+                        <div class="identity_img4 subCircle s_img">
+                          <img src="./images/i4.svg" alt="s1">
+                        </div>
+                        <p class="s_no identity_no">910090774</p>
+                        <p class="s_text">Token Collision</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <p class="Statistics_text rules_text">Rules</p>
+              <div class="row m-0">
+                <div class="outer_s_items">
+                  <div class="col-xl-3 col-md-4 col-sm-6 col-12 p-0">
+                    <div class="s_items identity_items">
+                      <div class="rules_img1 subCircle s_img">
+                        <img src="./images/r1.svg" alt="s1">
+                      </div>
+                      <p class="s_no identity_no">402</p>
+                      <p class="s_text">TCP Packet In</p>
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-md-4 col-sm-6 col-12 p-0">
+                    <div class="s_items identity_items">
+                      <div class="rules_img2 subCircle s_img">
+                        <img src="./images/r2.svg" alt="s1">
+                      </div>
+                      <p class="s_no identity_no">402</p>
+                      <p class="s_text">TCP Packet In</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <section class="trust_level_sec">
+          <div class="content_spacing_s">
+            <div class="row gx-0">
+              <div class="col-12">
+                <div class="s_header d-flex justify-content-between align-items-center">
+                  <p class="Statistics_text">Trust Level</p>
+                  <img class="s_close_icon" src="./images/close_icon.svg" alt="close">
+                </div>
+                <div class="sum_outer d-flex align-items-center justify-content-end">
+                  <div class="sum_identity d-flex align-items-center justify-content-around">
+                    <p class="box box1"></p>
+                    <p>Sum of Identities</p>
+                  </div>
+                  <div class="sum_rules d-flex align-items-center justify-content-around">
+                    <p class="box box2"></p>
+                    <p>Sum of Rules</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 d-flex justify-content-center">
+                <img class="graph_img img-fluid" src="./images/graph.svg" alt="grph">
+              </div>
+            </div>
+          </div>
+        </section>
+        <footer class="footer d-flex justify-content-end position-relative">
+          <span class="footerText"> &copy; 2021 Bluearmor | All Rights Reserved</span>
+        </footer>
+      </div>
+    </div>
+    <div class="loader">
+      <img class="loader_img" src="./images/Rolling-1s-78px.gif" alt="img">
+    </div>
+    <script src="./bootstrapJs/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
